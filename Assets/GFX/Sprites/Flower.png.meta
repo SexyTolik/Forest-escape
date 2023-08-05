@@ -67,9 +67,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    resizeAlgorithm: 1
+    textureFormat: 4
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -713,7 +713,7 @@ TextureImporter:
       Flower_19: -2050301109
       Flower_43: -192714502
       Flower_49: -1250564057
-      Flower_15: -304787076
+      Flower_20: 1630843604
       Flower_29: -1826249703
       Flower_22: 678188546
       Flower_34: -42926223
@@ -738,11 +738,11 @@ TextureImporter:
       Flower_8: 1001703324
       Flower_27: -1331064188
       Flower_28: -675061977
-      Flower_3: -41438057
       Flower_62: -329923121
-      Flower_61: -1862835686
-      Flower_24: 1355179952
+      Flower_3: -41438057
       Flower_65: 91320319
+      Flower_24: 1355179952
+      Flower_61: -1862835686
       Flower_6: 738589846
       Flower_30: -1058694717
       Flower_41: -597631013
@@ -772,7 +772,7 @@ TextureImporter:
       Flower_17: -76868334
       Flower_51: -972243701
       Flower_37: -583651342
-      Flower_20: 1630843604
+      Flower_15: -304787076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
