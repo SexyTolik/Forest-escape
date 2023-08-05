@@ -7,6 +7,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterController _ch;
     [SerializeField] private float _speed;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void FixedUpdate()
     {
         Walk();
