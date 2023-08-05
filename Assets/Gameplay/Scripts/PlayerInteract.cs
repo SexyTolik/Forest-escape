@@ -6,20 +6,25 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float _interactDistance = 2.5f;
     [SerializeField] private Animator _anim;
 
+    [SerializeField] private HandedBobr _handedBobr;
+
     private AttackType _attackType;
 
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        if(_handedBobr.IsBobrInHand)
         {
-            _attackType = AttackType.BreakingWood;
-            ThrowRaycast();
-        }
+            if (Input.GetMouseButton(0))
+            {
+                _attackType = AttackType.BreakingWood;
+                ThrowRaycast();
+            }
 
-        if (Input.GetMouseButton(1))
-        {
-            _attackType = AttackType.BreakingGrass;
-            ThrowRaycast();
+            if (Input.GetMouseButton(1))
+            {
+                _attackType = AttackType.BreakingGrass;
+                ThrowRaycast();
+            }
         }
     }
 
@@ -37,11 +42,6 @@ public class PlayerInteract : MonoBehaviour
             {
                 obj.Interact(_attackType);
             }
-
-            //if (hitObject.TryGetComponent<Bober>(out var bober))
-            //{
-            //    bober.PickUp();
-            //}
         }
     }
 }
