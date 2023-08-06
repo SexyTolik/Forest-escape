@@ -5,10 +5,8 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask _raycastMask;
     [SerializeField] private float _interactDistance = 2.5f;
     [SerializeField] private Animator _anim;
-
     [SerializeField] private HandedBobr _handedBobr;
-
-    private AttackType _attackType;
+    [SerializeField] private ParticleSpawner _particleSpawner;
 
     private void Update()
     {
@@ -16,19 +14,17 @@ public class PlayerInteract : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                _attackType = AttackType.BreakingWood;
-                ThrowRaycast();
+                ThrowRaycast(AttackType.BreakingWood);
             }
 
             if (Input.GetMouseButton(1))
             {
-                _attackType = AttackType.BreakingGrass;
-                ThrowRaycast();
+                ThrowRaycast(AttackType.BreakingGrass);
             }
         }
     }
 
-    private void ThrowRaycast()
+    private void ThrowRaycast(AttackType attackType)
     {
         RaycastHit hitInfo = new RaycastHit();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -40,7 +36,9 @@ public class PlayerInteract : MonoBehaviour
 
             if(hitObject.TryGetComponent<BreakableObject>(out var obj))
             {
-                obj.Interact(_attackType);
+                bool isBreakSucces = obj.Interact(attackType);
+
+                if (isBreakSucces) _particleSpawner.SpawnParticle(attackType, hitInfo.point);
             }
         }
     }

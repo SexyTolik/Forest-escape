@@ -4,11 +4,21 @@ public class WoodObjectInteract : BreakableObject
 {
     [SerializeField] private float _health = 3f;
 
-    protected override void Break()
+    protected override bool Break()
     {
-        if(_attackType == AttackType.BreakingWood)
+        if (_attackType != AttackType.BreakingWood) return false;
+
+        //_animator.Play()
+
+        Debug.Log("hit");
+
+        _health--;
+        if (_health <= 0)
         {
-            Debug.Log("WoodHit");
+            _isBreaked = true;
+            gameObject.SetActive(false);
         }
+
+        return true;
     }
 }

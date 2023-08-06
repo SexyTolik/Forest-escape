@@ -3,27 +3,28 @@ using UnityEngine;
 
 public abstract class BreakableObject : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _particle;
     [SerializeField] private float _breakDelay = 1f;
+    [SerializeField] protected Animator _animator;
 
     private bool _canBreak = true;
-    protected AttackType _attackType;
 
-    public void Interact(AttackType attackType)
+    protected AttackType _attackType;
+    protected bool _isBreaked = false;
+
+    public bool Interact(AttackType attackType)
     {
         _attackType = attackType;
 
-        if (_canBreak == true)
-        {
-            Break();
+        if (_canBreak == false) return false;
 
-            _particle.Play();
+        bool isBreakSucces = Break();
 
-            StartCoroutine(BreakDelay());
-        }
+        if (_isBreaked == false) StartCoroutine(BreakDelay());
+        
+        return isBreakSucces;
     }
 
-    protected abstract void Break();
+    protected abstract bool Break();
 
     private IEnumerator BreakDelay()
     {
@@ -34,6 +35,3 @@ public abstract class BreakableObject : MonoBehaviour
         _canBreak = true;
     }
 }
-
-
-
