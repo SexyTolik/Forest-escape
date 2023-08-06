@@ -7,6 +7,8 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Animator _anim;
     [SerializeField] private HandedBobr _handedBobr;
     [SerializeField] private ParticleSpawner _particleSpawner;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _chainsawSound, _brushDestroySound;
 
     private void Update()
     {
@@ -18,17 +20,25 @@ public class PlayerInteract : MonoBehaviour
                 {
                     ThrowRaycast(AttackType.BreakingWood);
                     _anim.SetInteger("Input", 1);
+                    _audioSource.clip= _chainsawSound;
                 }
 
                 if (Input.GetMouseButton(1))
                 {
                     ThrowRaycast(AttackType.BreakingGrass);
                     _anim.SetInteger("Input", 2);
+                    _audioSource.clip = _brushDestroySound;
+                }
+
+                if (!_audioSource.isPlaying)
+                {
+                    _audioSource.Play();
                 }
             }
             else
             {
                 _anim.SetInteger("Input", 0);
+                _audioSource.Stop();
             }
 
         }
