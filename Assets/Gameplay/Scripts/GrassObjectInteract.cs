@@ -3,6 +3,13 @@
 public class GrassObjectInteract : BreakableObject
 {
     [SerializeField] private float _health = 3f;
+    private float _currentHealth; 
+
+    private void OnEnable()
+    {
+        _currentHealth = _health;
+    }
+
 
     protected override bool Break()
     {
@@ -10,8 +17,8 @@ public class GrassObjectInteract : BreakableObject
 
         //_animator.Play()
 
-        _health--;
-        if (_health <= 0)
+        _currentHealth--;
+        if (_currentHealth <= 0)
         {
             _isBreaked = true;
             gameObject.SetActive(false);
