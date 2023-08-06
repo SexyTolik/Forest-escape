@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class EvilFlowerBeh : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
-    
+    [SerializeField] private CameraController Camera;
+
+
     private NavMeshAgent meshAgent;
 
     void Start()
@@ -22,7 +24,7 @@ public class EvilFlowerBeh : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Target.transform.LookAt(gameObject.transform);
+            Camera.transform.LookAt(gameObject.transform);
 
             GetComponent<Animator>().SetTrigger("Attak");
         }

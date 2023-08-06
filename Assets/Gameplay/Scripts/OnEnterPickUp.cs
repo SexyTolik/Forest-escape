@@ -4,6 +4,8 @@
 public class OnEnterPickUp : MonoBehaviour
 {
     [SerializeField] private float _radius;
+    [SerializeField] private GameObject _flower;
+
 
     private SphereCollider _sphereCollider;
 
@@ -19,6 +21,7 @@ public class OnEnterPickUp : MonoBehaviour
         if(other.gameObject.TryGetComponent<HandedBobr>(out var bobr))
         {
             bobr.PickUp();
+            _flower.SetActive(true);
             Destroy(gameObject);
         }
     }

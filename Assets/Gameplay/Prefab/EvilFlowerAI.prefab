@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6036159340313281872}
   - component: {fileID: 2536092049664504397}
   - component: {fileID: 4511005967966662559}
+  - component: {fileID: 5686915341377799030}
   m_Layer: 0
   m_Name: EvilFlowerAI
   m_TagString: Untagged
@@ -264,6 +265,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5686915341377799030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268837540089277528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac678f182ba946e409345f9bf8fc6764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _flower: {fileID: 1268837540089277528}
 --- !u!1 &4048767148980006644
 GameObject:
   m_ObjectHideFlags: 0

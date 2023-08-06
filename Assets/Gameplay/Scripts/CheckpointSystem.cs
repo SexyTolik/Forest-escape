@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class CheckpointSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    [SerializeField] private CharacterController _player;
+    [SerializeField] private CameraController _camera;
     [SerializeField] private GameObject _flower;
 
     private List<Checkpoint> _checkpoints = new List<Checkpoint>();
 
+    public void AddCheckpoint(Checkpoint checkpoint)
+    {
+        _checkpoints.Add(checkpoint);
+    }
+
     public void GoToCheckpoint()
     {
-        _checkpoints[_checkpoints.Count - 1].Activate(_player, _flower);
+        Debug.Log("GoToCheck");
+        _checkpoints[_checkpoints.Count - 1].Activate(_player, _camera, _flower);
     }
 }
