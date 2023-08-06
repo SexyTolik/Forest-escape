@@ -19,6 +19,7 @@ public class OnEnterPickUp : MonoBehaviour
         if(other.gameObject.TryGetComponent<HandedBobr>(out var bobr))
         {
             bobr.PickUp();
+            Destroy(gameObject);
         }
     }
 }

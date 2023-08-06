@@ -2,7 +2,7 @@
 
 public class ParticleSpawner : MonoBehaviour
 {
-    [SerializeField] private Particle _woodParticlePrefab;
+    [SerializeField] private GameObject _woodParticlePrefab;
     [SerializeField] private Particle _grassParticlePrefab;
 
     public void SpawnParticle(AttackType attackType, Vector3 position)
@@ -11,8 +11,7 @@ public class ParticleSpawner : MonoBehaviour
         switch (attackType)
         {
             case AttackType.BreakingWood:
-                Particle woodParticle = Instantiate(_woodParticlePrefab, position, Quaternion.identity, transform);
-                woodParticle.PlayParticle();
+                Instantiate(_woodParticlePrefab, position, Quaternion.identity);
                 break;
             case AttackType.BreakingGrass:
                 Particle grassParticle = Instantiate(_grassParticlePrefab, position, Quaternion.identity, transform);

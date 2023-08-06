@@ -15,7 +15,7 @@ public class WoodObjectInteract : BreakableObject
     {
         if (_attackType != AttackType.BreakingWood) return false;
 
-        //_animator.Play()
+        _animator.SetInteger("Input", 1);
 
         Debug.Log("hit");
 

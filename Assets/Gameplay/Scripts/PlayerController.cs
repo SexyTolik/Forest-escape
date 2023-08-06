@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController _ch;
-    [SerializeField] private float _speed;
+    public float _speed;
 
     private void Awake()
     {

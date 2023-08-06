@@ -31,7 +31,7 @@ public abstract class BreakableObject : MonoBehaviour
         _canBreak = false;
 
         yield return new WaitForSeconds(_breakDelay);
-
+        _animator.SetInteger("Input", 0);
         _canBreak = true;
     }
 }

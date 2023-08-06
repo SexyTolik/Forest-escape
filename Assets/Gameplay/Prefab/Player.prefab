@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3242702175222982261}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,8 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a924ae8cd44ca4b875c8e08b130297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _woodParticlePrefab: {fileID: 8290260450753330615, guid: f3e5bf79e0ce9d445a2a95d3db7a5a63,
-    type: 3}
+  _woodParticlePrefab: {fileID: 0}
   _grassParticlePrefab: {fileID: 5814223087254559479, guid: c38576840dfe9da46bcce52247e2313c,
     type: 3}
 --- !u!1 &3242702176620469335

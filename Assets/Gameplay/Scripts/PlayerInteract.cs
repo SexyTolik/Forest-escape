@@ -12,15 +12,25 @@ public class PlayerInteract : MonoBehaviour
     {
         if(_handedBobr.IsBobrInHand)
         {
-            if (Input.GetMouseButton(0))
+            if(Input.GetMouseButton(0) || Input.GetMouseButton(1))
             {
-                ThrowRaycast(AttackType.BreakingWood);
+                if (Input.GetMouseButton(0))
+                {
+                    ThrowRaycast(AttackType.BreakingWood);
+                    _anim.SetInteger("Input", 1);
+                }
+
+                if (Input.GetMouseButton(1))
+                {
+                    ThrowRaycast(AttackType.BreakingGrass);
+                    _anim.SetInteger("Input", 2);
+                }
+            }
+            else
+            {
+                _anim.SetInteger("Input", 0);
             }
 
-            if (Input.GetMouseButton(1))
-            {
-                ThrowRaycast(AttackType.BreakingGrass);
-            }
         }
     }
 

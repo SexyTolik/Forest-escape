@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1908174297025017831}
   - component: {fileID: 1908174297025017824}
   - component: {fileID: 1908174297025017825}
-  - component: {fileID: 3205645812512237500}
   m_Layer: 6
   m_Name: GFX
   m_TagString: Untagged
@@ -4866,19 +4865,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3205645812512237500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908174297025017829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870e04f2841616b4da912f631a3b51c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canRotateAll: 0
 --- !u!1 &1908174297896860409
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,7 +4893,7 @@ Transform:
   m_GameObject: {fileID: 1908174297896860409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1908174297025017830}
@@ -4926,7 +4912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0743f3ee751e7b9449794b9941c64ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _breakDelay: 3
+  _breakDelay: 1
   _animator: {fileID: 1908174297896860405}
   _health: 3
 --- !u!95 &1908174297896860405
@@ -4939,7 +4925,7 @@ Animator:
   m_GameObject: {fileID: 1908174297896860409}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86b6bd154d532e04c90f8b791e69aba3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
