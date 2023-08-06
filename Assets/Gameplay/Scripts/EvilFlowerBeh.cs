@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EvilFlowerBeh : MonoBehaviour
 {
-    [SerializeField] private GameObject Target;
+    [SerializeField] private PlayerController Target;
     [SerializeField] private CameraController Camera;
 
 
@@ -18,15 +18,33 @@ public class EvilFlowerBeh : MonoBehaviour
 
     private void Update()
     {
-        meshAgent.SetDestination(Target.transform.position);
+        if (meshAgent.enabled)
+            meshAgent.SetDestination(Target.transform.position);
     }
+
+    private IEnumerator RotateToFlower()
+    {
+        meshAgent.enabled = false;
+        Target.enabled = false;
+        Camera.enabled = false;
+
+        Camera.transform.LookAt(gameObject.transform.position + new Vector3(0, 1,0));
+
+        GetComponent<Animator>().SetTrigger("Attak");
+
+        yield return new WaitForSeconds(1f);
+
+        Camera.enabled = true;
+        Target.enabled = true;
+        meshAgent.enabled = true;
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Camera.transform.LookAt(gameObject.transform);
-
-            GetComponent<Animator>().SetTrigger("Attak");
+            StartCoroutine(RotateToFlower());
         }
     }
 }

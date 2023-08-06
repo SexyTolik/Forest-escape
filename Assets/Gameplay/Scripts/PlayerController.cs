@@ -5,11 +5,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController _ch;
+    public float _defaultSpeed;
     public float _speed;
 
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+    private void OnEnable()
+    {
+        _speed = _defaultSpeed;
     }
 
     private void FixedUpdate()

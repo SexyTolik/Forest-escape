@@ -4926,7 +4926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2513537dce5cdd14a8f7b56763916103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _breakDelay: 3
+  _breakDelay: 0.25
   _animator: {fileID: 6327368302064446436}
   _health: 2
 --- !u!65 &6327368302064446437

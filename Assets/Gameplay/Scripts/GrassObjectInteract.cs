@@ -4,6 +4,8 @@ public class GrassObjectInteract : BreakableObject
 {
     [SerializeField] private float _health = 3f;
 
+    private PlayerController _playerController;
+
     private float _currentHealth; 
 
     private void OnEnable()
@@ -32,7 +34,8 @@ public class GrassObjectInteract : BreakableObject
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>()._speed -= 5;
+            _playerController = other.GetComponent<PlayerController>();
+            other.GetComponent<PlayerController>()._speed = other.GetComponent<PlayerController>()._speed / 2f;
             other.GetComponent<CharacterController>().Move(new Vector3(0,0,0));
         }
     }
@@ -41,7 +44,13 @@ public class GrassObjectInteract : BreakableObject
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerController>()._speed += 5;
+            other.GetComponent<PlayerController>()._speed = other.GetComponent<PlayerController>()._defaultSpeed;
         }
+    }
+
+    private void OnDisable()
+    {
+        if(_playerController != null)
+            _playerController._speed = _playerController._defaultSpeed;
     }
 }
