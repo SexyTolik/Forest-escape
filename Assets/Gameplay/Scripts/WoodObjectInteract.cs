@@ -9,6 +9,7 @@ public class WoodObjectInteract : BreakableObject
     private void OnEnable()
     {
         _currentHealth = _health;
+        _isBreaked = false;
     }
 
     protected override bool Break()
