@@ -3,11 +3,13 @@
 public class GrassObjectInteract : BreakableObject
 {
     [SerializeField] private float _health = 3f;
+
     private float _currentHealth; 
 
     private void OnEnable()
     {
         _currentHealth = _health;
+        _isBreaked = false;
     }
 
     protected override bool Break()

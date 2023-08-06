@@ -6,13 +6,14 @@ using UnityEngine.AI;
 public class EvilFlowerBeh : MonoBehaviour
 {
     [SerializeField] private GameObject Target;
+    
     private NavMeshAgent meshAgent;
 
-    // Start is called before the first frame update
     void Start()
     {
-        meshAgent= GetComponent<NavMeshAgent>();
+        meshAgent = GetComponent<NavMeshAgent>();
     }
+
     private void Update()
     {
         meshAgent.SetDestination(Target.transform.position);
@@ -21,6 +22,8 @@ public class EvilFlowerBeh : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Target.transform.LookAt(gameObject.transform);
+
             GetComponent<Animator>().SetTrigger("Attak");
         }
     }
