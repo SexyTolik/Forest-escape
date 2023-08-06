@@ -10,7 +10,6 @@ public class GrassObjectInteract : BreakableObject
         _currentHealth = _health;
     }
 
-
     protected override bool Break()
     {
         if (_attackType != AttackType.BreakingGrass) return false;

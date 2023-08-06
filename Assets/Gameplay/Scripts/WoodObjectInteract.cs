@@ -17,8 +17,6 @@ public class WoodObjectInteract : BreakableObject
 
         _animator.SetInteger("Input", 1);
 
-        Debug.Log("hit");
-
         _currentHealth--;
         if (_currentHealth <= 0)
         {
